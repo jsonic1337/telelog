@@ -1,4 +1,4 @@
-# Telegram Business Logger Bot
+# Telelog (Telegram Business Logger Bot)
 
 Бот для Telegram Business, который сохраняет входящие сообщения и присылает
 владельцу копию, если сообщение удалили, отредактировали или если это
