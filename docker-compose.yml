@@ -1,0 +1,16 @@
+services:
+  bot:
+    build: .
+    env_file:
+      - .env
+    environment:
+      DATABASE_URL: sqlite:////app/data/database.db
+      MEDIA_DIR: /app/media
+      REPLY_MEDIA_CAPTURE_MODE: ${REPLY_MEDIA_CAPTURE_MODE:-protected}
+      MEDIA_RETENTION_DAYS: ${MEDIA_RETENTION_DAYS:-7}
+      MEDIA_CLEANUP_INTERVAL_SECONDS: ${MEDIA_CLEANUP_INTERVAL_SECONDS:-3600}
+      DELETE_LOCAL_MEDIA_AFTER_REPORT: ${DELETE_LOCAL_MEDIA_AFTER_REPORT:-1}
+    volumes:
+      - ./data:/app/data
+      - ./media:/app/media
+    restart: unless-stopped
